@@ -62,7 +62,7 @@ Let me know if the changes look okay.
 Thanks,
 Dominion System Technologies,
 +1 (313) 413-1477''', 
-                     cc: 'thierrykelly91@gmail.com, 
+                     cc: 'thierrykelly91@gmail.com', 
                      subject: 'Terraform Infra deployment completed!!!', 
                      to: 'thierrykelly91@gmail.com'
             }
