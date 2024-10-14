@@ -3,10 +3,10 @@ pipeline {
     parameters {
         choice(name: 'deploy_choice', choices: ['apply', 'destroy'], description: 'The deployment type')
     }
-    environment {
-        EMAIL_TO = 'fusisoft@gmail.com'
-        AWS_REGION = 'us-west-2'  // Set AWS region globally for reusability
-    }
+    // environment {
+    //     EMAIL_TO = 'fusisoft@gmail.com'
+    //     AWS_REGION = 'us-west-2'  // Set AWS region globally for reusability
+    // }
     stages {
         stage('1. Terraform init') {
             steps {
@@ -54,18 +54,18 @@ pipeline {
                 sh "AWS_REGION=${env.AWS_REGION} terraform ${params.deploy_choice} --auto-approve"
             }
         }
-        stage('5. Email Notification') {
-            steps {
-                mail bcc: 'fusisoft@gmail.com', 
-                     body: '''Terraform deployment is completed.
-Let me know if the changes look okay.
-Thanks,
-Dominion System Technologies,
-+1 (313) 413-1477''', 
-                     cc: 'fusisoft@gmail.com', 
-                     subject: 'Terraform Infra deployment completed!!!', 
-                     to: 'fusisoft@gmail.com'
-            }
-        }
+//         stage('5. Email Notification') {
+//             steps {
+//                 mail bcc: 'fusisoft@gmail.com', 
+//                      body: '''Terraform deployment is completed.
+// Let me know if the changes look okay.
+// Thanks,
+// Dominion System Technologies,
+// +1 (313) 413-1477''', 
+//                      cc: 'fusisoft@gmail.com', 
+//                      subject: 'Terraform Infra deployment completed!!!', 
+//                      to: 'fusisoft@gmail.com'
+//             }
+//         }
     }
 }
