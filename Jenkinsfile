@@ -1,7 +1,7 @@
 pipeline {
     agent { node { label 'terraform-node' } } 
     parameters {
-        choice(name: 'deployment_type', choices: ['apply', 'destroy'], description: 'The deployment type')
+        choice(name: 'Deployment_type', choices: ['apply', 'destroy'], description: 'The deployment type')
     }
     // environment {
     //     EMAIL_TO = 'fusisoft@gmail.com'
